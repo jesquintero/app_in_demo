@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    width: 100% !important;
+    max-width: 100%;
+    height: 100% !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.quarter {
+    
+}
+
+.mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh !important;
+    width: 50vw !important;
+}
+
+.full {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh !important;
+    width: 100vw !important;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.upLeft {
+    background-color: darksalmon;
+}
+
+.upRight {
+    background-color: coral;
+}
+
+.downLeft {
+    background-color: yellowgreen;
+}
+
+.downRight {
+    background-color: olivedrab;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: blue;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: 40%;
+  }
+
+  .visible {
+    display: block;
+  }
+  
+  /* The Close Button */
+  .close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-modal:hover,
+  .close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  form { 
+    background-color: blue;
+  }
+
+  form > p {
+    margin-top: 2rem;
+  }
+
+  .questions {
+    width: 100%;
+    min-height: 2rem;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .material-icons {
+    color: #fefefe;
+    font-size: 4rem;
+  }
