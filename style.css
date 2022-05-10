@@ -1,21 +1,21 @@
-* {
-    box-sizing: border-box;
+* { 
     margin: 0;
     padding: 0;
-}
-
-main {
-    display: flex;
-    width: 100% !important;
-    max-width: 100%;
-    height: 100% !important;
-    flex-direction: row;
-    flex-wrap: wrap;
     box-sizing: border-box;
 }
 
-.quarter {
-    
+body { 
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+.main {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .mini {
@@ -24,16 +24,6 @@ main {
     align-items: center;
     min-height: 50vh !important;
     width: 50vw !important;
-}
-
-.full {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh !important;
-    width: 100vw !important;
-    -webkit-transition: 1s;
-    transition: 1s;
 }
 
 .upLeft {
@@ -52,67 +42,108 @@ main {
     background-color: olivedrab;
 }
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: blue;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    height: 40%;
-  }
-
-  .visible {
-    display: block;
-  }
-  
-  /* The Close Button */
-  .close-modal {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close-modal:hover,
-  .close-modal:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  form { 
-    background-color: blue;
-  }
-
-  form > p {
-    margin-top: 2rem;
-  }
-
-  .questions {
-    width: 100%;
-    min-height: 2rem;
-  }
-
-  .hide {
-    display: none;
-  }
-
-  .material-icons {
+.material-icons {
     color: #fefefe;
     font-size: 4rem;
-  }
+}
+
+.flip-card-content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.flip-card-side-a,
+.flip-card-side-b,
+.flip-card-side-c,
+.flip-card-side-d {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    backface-visibility: hidden;
+    transform-origin: 50% 50%;
+    /* transition: all 9s ease-in-out; */
+}
+
+/* .flip-card-side-a {
+    transform: rotateY(0deg) translateZ(100px);
+}
+.flip-card-side-b {
+    transform: rotateY(90deg) translateZ(100px);
+}
+.flip-card-side-c {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.flip-card-side-d {
+    transform: rotateY(0deg) translateZ(100px);
+} */
+
+.flip .flip-card-side-a {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.flip .flip-card-side-b {
+    transform: rotateY(0deg) translateZ(100px);
+}
+.flip .flip-card-side-c {
+    transform: rotateY(0deg) translateZ(100px);
+}
+.flip .flip-card-side-d {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.hide {
+    display: none;
+    /* animation: hideMe 3s forwards; */
+}
+
+.pointer {
+    /* animation: showMe 3s forwards; */
+    z-index: 10;
+}
+
+@keyframes hideMe{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes showMe{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.material-symbols-outlined {
+    font-size: 5rem;
+}
+
+.flip-card-content {
+    perspective: 800px;
+    perspective-origin: top right;
+}
+
+.r_b {
+    z-index: 100;
+    height: 80%;
+    width: 20%;
+    float: right;
+    /* background: linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,1))); */
+    background: linear-gradient(to left, rgba(255,255,255,0.3), rgba(255,255,255,0.01));
+}
+
+.d_c {
+    z-index: 100;
+    height: 10%;
+    width: 100%;
+    margin-top: 90vh;
+    text-align: center;
+    background: linear-gradient(to top, rgba(255,255,255,0.3), rgba(255,255,255,0.01));
+}

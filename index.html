@@ -1,79 +1,45 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
-    <title>Esto es una Demo</title>
+    <title>Last chance</title>
 </head>
 <body>
-    <main>
-        <div id="1" onclick="exec(this.id)" class="quarter mini upLeft"></div>
-        <div id="2" onclick="exec(this.id)" class="quarter mini upRight"><span class="material-icons">&#xe55e;</span></div>
-        <div id="3" onclick="exec(this.id)" class="quarter mini downLeft"></div>
-        <div id="4" onclick="exec(this.id)" class="quarter mini downRight"></div>
-        
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <form>
-                <p>Question 1 ?</p>
-                <select class="questions" name="q1" id="q1">
-                    <option value="opt1">Option 1️⃣</option>
-                    <option value="opt2">Option 2️⃣</option>
-                    <option value="opt3">Option 3️⃣</option>
-                </select>
-
-                <p>Question 2 ?</p>
-                <select class="questions" name="q2" id="q2">
-                    <option value="opt1">Option 1️⃣</option>
-                    <option value="opt2">Option 2️⃣</option>
-                    <option value="opt3">Option 3️⃣</option>
-                </select>
-
-                <p>Question 3 ?</p>
-                <select class="questions" name="q3" id="q3">
-                    <option value="opt1">Option 1️⃣</option>
-                    <option value="opt2">Option 2️⃣</option>
-                    <option value="opt3">Option 3️⃣</option>
-                </select>
-            </form>
+    <div class="main">
+        <div id="a" onclick="hide_this(this.id)" class="quarter mini upLeft"></div>
+        <div id="b" onclick="hide_this(this.id)" class="quarter mini upRight"><span class="material-icons">&#xe55e;</span></div>
+        <div id="c" onclick="hide_this(this.id)" class="quarter mini downLeft"></div>
+        <div id="d" onclick="hide_this(this.id)" class="quarter mini downRight"></div>
+    </div>
+    
+    <div class="flip-card-content hide">
+        <div class="flip-card-side-a upLeft hide">
+            
+            <div class="r_b " onclick="t_r_b()"><span class="material-symbols-outlined"> keyboard_arrow_right </span></div>
+            <div class="d_c "><span class="material-symbols-outlined"> keyboard_arrow_down </span></div>
         </div>
-    </main>
+        <div class="flip-card-side-b upRight hide">
+            
+            <div class="l_a "><span class="material-symbols-outlined"> keyboard_arrow_left </span></div>
+            <div class="d_d "><span class="material-symbols-outlined"> keyboard_arrow_down </span></div>
+        </div>
+        <div class="flip-card-side-c downLeft hide">
+            
+            <div class="u_a "><span class="material-symbols-outlined"> keyboard_arrow_up </span></div>
+            <div class="r_d "><span class="material-symbols-outlined"> keyboard_arrow_right </span></div>
+        </div>
+        <div class="flip-card-side-d downRight hide">
+            
+            <div class="u_b "><span class="material-symbols-outlined"> keyboard_arrow_up </span></div>
+            <div class="l_c "><span class="material-symbols-outlined"> keyboard_arrow_left </span></div>
+        </div>
+    </div>
 
-    <script>
-        localStorage.setItem('show','all')
-        const squares = [1,2,3,4]
-        const m = document.getElementById('myModal')
-        
-        function exec(id){
-            let showStatus = localStorage.getItem('show')
-            let resto = squares.filter( square => square != id)
-            if (showStatus == 'all') {
-                resto.forEach(el => {
-                    const x = document.getElementById(el)
-                    m.style.display = 'block';
-                    x.classList.add("hide");
-
-                });
-                localStorage.setItem('show','one')
-                document.getElementById(id).classList.add("full")
-            }
-            if (showStatus == 'one') {
-                resto.forEach(el => {
-                    const x = document.getElementById(el)
-                    x.classList.remove("hide");
-                });
-                localStorage.setItem('show','all')
-                document.getElementById(id).classList.remove("full")
-            }
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
